@@ -6,6 +6,7 @@ const PORT = 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static('public'));
 
 let tables = [
     {
@@ -77,13 +78,15 @@ app.put('/api/tables/:uniqueId', (req, res) => {
 app.post('/api/', (req, res) => {
     if(tables.length < 5){
         tables.push(req.body);
-        res.send('Successfully added to a table');
+        console.log('Successfully added to a table');
     }else{
         waitlist.push(req.body);
-        res.send('Successfully added to waitlist');
+        console.log('Successfully added to waitlist');
     }
 });
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`);
 });
+
+$.ajax()
