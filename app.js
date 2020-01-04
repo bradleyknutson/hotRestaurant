@@ -7,9 +7,41 @@ const PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-let tables = [];
+let tables = [
+    {
+        name: "Steven",
+        phoneNumber: "800123987",
+        email: "example@coolstuff.com",
+        uniqueId: 'MrSteven'
+    },
+    {
+        name: "Jim",
+        phoneNumber: "987654321",
+        email: "coolness@wtf.gov",
+        uniqueId: "jimbobwhatever"
+    },
+    {
+        name: "Marvin",
+        phoneNumber: "456789321",
+        email: "whatever@anything.org",
+        uniqueId: "letsmarvingayandgetiton"
+    }
+];
 
-let waitlist = [];
+let waitlist = [
+    {
+        name: "Bill",
+        phoneNumber: "98435168",
+        email: "bill@microsoft.com",
+        uniqueId: "imrich"
+    },
+    {
+        name: "Teddy",
+        phoneNumber: "984681681",
+        email: "dev@thisjobsux.com",
+        uniqueId: "doitforthemoney"
+    }
+];
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, "home.html"));
@@ -31,9 +63,16 @@ app.get('/api/waitlist/', (req, res) => {
     res.json(waitlist);
 });
 
-app.get('/api/tables/:table', (req, res) => {
-
-})
+app.put('/api/tables/:uniqueId', (req, res) => {
+    for(let i = 0; i<tables.length; i++){
+        if(tables[i].uniqueId === req.params.uniqueId){
+            tables.splice(i, 1);
+        }
+    }
+    tables.push(waitlist[0]);
+    waitlist.shift();
+    res.json([tables, waitlist]);
+});
 
 app.post('/api/', (req, res) => {
     if(tables.length < 5){
