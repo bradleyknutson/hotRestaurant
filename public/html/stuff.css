@@ -2,14 +2,39 @@
 {
 	background-color: white;
 	width: 960px;
-	margin: 0 auto;
+	margin: 0 auto 15px;
 	text-align: center;
 	border-radius: 10px;
 }
 
+.button
+{
+	color: white;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 0;
+	padding: 12px;
+	margin: 0 4px 15px;
+}
+
+.bluebutton
+{
+	background-color: #286090;
+}
+
+.redbutton
+{
+	background-color: #C9302C;
+}
+
+.homebutton
+{
+	color: black;
+}
+
 .high-lines
 {
-	line-height: 100px;
+	line-height: 50px;
 }
 
 .mid-lines
