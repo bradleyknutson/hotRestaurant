@@ -7,9 +7,29 @@
 	border-radius: 10px;
 }
 
+.button
+{
+	color: white;
+	font-size: 20px;
+	border-radius: 5px;
+	border: 0;
+	padding: 12px;
+	margin-bottom: 20px;
+}
+
+.bluebutton
+{
+	background-color: #286090;
+}
+
+.redbutton
+{
+	background-color: #C9302C;
+}
+
 .high-lines
 {
-	line-height: 100px;
+	line-height: 50px;
 }
 
 .mid-lines
