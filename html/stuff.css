@@ -1,0 +1,28 @@
+.boxo
+{
+	background-color: white;
+	width: 960px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 10px;
+}
+
+.high-lines
+{
+	line-height: 100px;
+}
+
+.mid-lines
+{
+	line-height: 2rem;
+}
+
+body
+{
+	background-image: url("../Images/glitter-backgroud_1114-358.jpg");
+}
+
+h1
+{
+	font-size: 27px;
+}
